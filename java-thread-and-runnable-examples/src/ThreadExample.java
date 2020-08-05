@@ -1,8 +1,3 @@
-package src;
-
-/**
- * Created by rajeevkumarsingh on 08/05/17.
- */
 public class ThreadExample extends Thread {
 
     @Override

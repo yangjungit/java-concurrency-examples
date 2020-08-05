@@ -7,13 +7,13 @@ public class VolatileKeywordExample {
 
         Thread thread = new Thread(() -> {
            while(!sayHello) {
-
+               System.out.println("-----");
            }
 
            System.out.println("Hello World!");
 
            while(sayHello) {
-
+               System.out.println("+++++++");
            }
 
            System.out.println("Good Bye!");
@@ -21,11 +21,11 @@ public class VolatileKeywordExample {
 
         thread.start();
 
-        Thread.sleep(1000);
+        Thread.sleep(100);
         System.out.println("Say Hello..");
         sayHello = true;
 
-        Thread.sleep(1000);
+        Thread.sleep(100);
         System.out.println("Say Bye..");
         sayHello = false;
     }

@@ -1,4 +1,3 @@
-package src;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -37,10 +36,10 @@ public class ReentrantLockExample {
 
         ReentrantLockCounter counter = new ReentrantLockCounter();
 
-        executorService.submit(() -> counter.increment());
+        executorService.submit(counter::increment);
 
-        for(int i = 0; i < 10; i++) {
-            executorService.submit(() -> counter.increment());
+        for(int i = 0; i < 1000; i++) {
+            executorService.submit(counter::increment);
         }
 
         executorService.shutdown();

@@ -1,4 +1,3 @@
-package src;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -28,7 +27,7 @@ public class AtomicIntegerExample {
         AtomicCounter atomicCounter = new AtomicCounter();
 
         for(int i = 0; i < 1000; i++) {
-            executorService.submit(() -> atomicCounter.incrementAndGet());
+            executorService.submit(atomicCounter::incrementAndGet);
         }
 
         executorService.shutdown();

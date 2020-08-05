@@ -41,15 +41,9 @@ public class ReadWriteLockExample {
 
         ReadWriteCounter counter = new ReadWriteCounter();
 
-        Runnable readTask = () -> {
-          System.out.println(Thread.currentThread().getName() +
-                  " Read Task : " + counter.getCount());
-        };
+        Runnable readTask = () -> System.out.println(Thread.currentThread().getName() + " Read Task : " + counter.getCount());
 
-        Runnable writeTask = () -> {
-            System.out.println(Thread.currentThread().getName() +
-                    " Write Task : " + counter.incrementAndGetCount());
-        };
+        Runnable writeTask = () -> System.out.println(Thread.currentThread().getName() + " Write Task : " + counter.incrementAndGetCount());
 
         executorService.submit(readTask);
         executorService.submit(readTask);

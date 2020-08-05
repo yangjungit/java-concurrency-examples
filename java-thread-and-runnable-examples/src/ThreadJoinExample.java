@@ -1,8 +1,3 @@
-package src;
-
-/**
- * Created by rajeevkumarsingh on 08/05/17.
- */
 
 public class ThreadJoinExample {
     public static void main(String[] args) {
@@ -33,6 +28,7 @@ public class ThreadJoinExample {
 
         System.out.println("Waiting for Thread 1 to complete");
         try {
+            // thread1 sleep 2s join只等待1s 等待超时后不等待
             thread1.join(1000);
         } catch (InterruptedException e) {
             throw new IllegalStateException(e);
